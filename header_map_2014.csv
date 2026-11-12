@@ -1,0 +1,70 @@
+canonical_name,status,kind,original_header_or_span,note
+ResponseId,proposed,id,(none in file),row number of the respondent in the 2014 file (data row n = file row n+1)
+survey_year,proposed,constant,(added),constant 2014
+Country,confirmed,single,What Country do you live in?,"2014 has real country names (96 values); 2011-2013 had regions as well, so not directly comparable"
+USState,proposed,single,Which US State or Territory do you live in?,only asked of US respondents
+Age,confirmed,single,How old are you?,"text bands, kept as typed"
+Gender,proposed,single,What is your gender?,new in 2014; kept as typed (Male / Female / Prefer not to disclose); think about whether it belongs in a salary model
+YearsCode,confirmed,single (repaired),How many years of IT/Programming experience do you have?,"Excel date damage repaired to '<2','2-5','6-10','11+'; question says IT/programming experience - check vs YearsCode/YearsCodePro"
+DevType,confirmed,single,Which of the following best describes your occupation?,single answer; value set differs from 2011/2012 (adds DevOps)
+CompTotal,confirmed,single (band text),"Including bonus, what is your annual compensation in USD?","salary BAND text, kept as typed"
+ConvertedCompYearly,confirmed,derived number,(derived from the salary band),annual USD band midpoint; includes bonus; top band set by CONFIG
+Industry,proposed,single,How would you best describe the industry you currently work in?,
+OrgDevCount,proposed,single (repaired),How many developers are employed at your company?,number of developers at the company; bands repaired; 2014 has no company-size or team-size question
+RemoteWork,proposed,single,Do you work remotely?,Never / Occasionally / Part-time / Full-time; new in 2014
+RemoteEnjoyment,proposed,single,Do you enjoy working remotely?,only asked of people who work remotely
+RemoteLocation,proposed,single,Where do you work remotely most of the time?,only asked of people who work remotely
+MobilePlatformsSupported,proposed,list ';',"If your company has a native mobile app, what platforms do you support? (cols 13-19)",';' list; includes 'No mobile app'
+TimeSpend_NewFeatures,proposed,single,"In an average week, how do you spend your time at work?","hours per week band, as typed"
+TimeSpend_Refactoring,proposed,single,"In an average week, how do you spend your time at work? -> Refactoring / code quality",hours per week band
+TimeSpend_BugFixing,proposed,single,"In an average week, how do you spend your time at work? -> Fixing bugs",hours per week band
+TimeSpend_TechSupport,proposed,single,"In an average week, how do you spend your time at work? -> Technical support",hours per week band
+TimeSpend_Meetings,proposed,single,"In an average week, how do you spend your time at work? -> Meetings",hours per week band
+TimeSpend_Learning,proposed,single,"In an average week, how do you spend your time at work? -> Learning new skills",hours per week band
+TimeSpend_WebSurfing,proposed,single,"In an average week, how do you spend your time at work? -> Surfing the Internet",hours per week band
+TimeSpend_LookingForJob,proposed,single,"In an average week, how do you spend your time at work? -> Looking for a new job",hours per week band; new in 2014 (2013 asked about commuting instead)
+TimeSpend_StackExchange,proposed,single,"In an average week, how do you spend your time at work? -> Using Stack Exchange",hours per week band; new in 2014
+PurchaseInvolvement,proposed,list ';',What is your involvement in purchasing products or services for the company you work for? (You can choose more than one) (cols 29-33),';' list; same wording as 2013
+PurchaseTypes,proposed,list ';',What types of purchases are you involved in? (cols 34-40),';' list; adds 'Recruitment Tools & Services'
+BudgetOutsideExpenditure,proposed,single,"What is your budget for outside expenditures (hardware, software, consulting, etc) for 2014?","text bracket, kept as typed; 'Don't know' kept as a value; brackets differ slightly from 2013 ('$1,000 - $5,000', '>$100,001')"
+LanguageHaveWorkedWith,confirmed,list ';' (cleaned),Which of the following languages or technologies have you used significantly in the past year? (cols 42-53),';' list of canonical names; tick-boxes + parsed write-ins; 2014 wording is 'languages or technologies used significantly'
+LanguageHaveWorkedWith_count,proposed,derived number,(derived),number of distinct languages; 0 if 'None' ticked; blank if block unanswered or only an unusable write-in
+ToolsHaveWorkedWith,proposed,list ';' (cleaned),(derived from tick-boxes and write-ins),frameworks/libraries/databases/platforms recognised in the language question; not counted as languages; empty = none recognised
+TechExcitedAbout,proposed,list ';',Which technologies are you excited about? (cols 54-66),';' list of technologies; check against later 'WantToWorkWith' columns
+OpSys,confirmed,single,Which desktop operating system do you use the most?,"text as typed (Ubuntu, Debian, Mint, Fedora are separate answers in 2014)"
+TechProductsOwned,proposed,list ';',Which technology products do you own? (You can choose more than one) (cols 68-81),';' list; 'Other' means the typed answer in TechProductsOwned_OtherText
+TechProductsOwned_OtherText,proposed,free_text,Which technology products do you own? (You can choose more than one) -> Other (please specify),"typed text of the 'Other' product box, raw"
+ChangedJobsLast12m,proposed,single,Have you changed jobs in the last 12 months?,Yes/No
+JobFoundVia,proposed,single,How did you find out about your current job?,'Other (please specify)' means the typed answer in JobFoundVia_OtherText
+JobFoundVia_OtherText,proposed,free_text,How did you find out about your current job? -> Other (please specify),"typed text, raw"
+OpenToNewJob,proposed,single,Are you currently looking for a job or open to new opportunities?,Yes/No
+RecruiterContactFrequency,proposed,single,How often are you contacted by recruiters?,three text answers
+ContactPref_Email,proposed,single,How do you prefer to be contacted about job opportunities?,"preference scale, as typed"
+ContactPref_LinkedIn,proposed,single,How do you prefer to be contacted about job opportunities? -> LinkedIn Inmail,preference scale
+ContactPref_Phone,proposed,single,How do you prefer to be contacted about job opportunities? -> Phone,preference scale
+ContactPref_CareersMessage,proposed,single,How do you prefer to be contacted about job opportunities? -> Stack Overflow Careers Message,preference scale
+ContactPref_Twitter,proposed,single,How do you prefer to be contacted about job opportunities? -> Twitter,preference scale
+RecruitEmail_Personalized,proposed,single,"In receiving an email about a job opportunity, what attributes of the message would make you more likely to respond?","extent scale, as typed"
+RecruitEmail_MentionsCode,proposed,single,"In receiving an email about a job opportunity, what attributes of the message would make you more likely to respond? -> Mentions my code or Stack Overflow activity",extent scale
+RecruitEmail_Salary,proposed,single,"In receiving an email about a job opportunity, what attributes of the message would make you more likely to respond? -> Includes salary information",extent scale
+RecruitEmail_Team,proposed,single,"In receiving an email about a job opportunity, what attributes of the message would make you more likely to respond? -> Describes the team I will work on",extent scale
+RecruitEmail_Culture,proposed,single,"In receiving an email about a job opportunity, what attributes of the message would make you more likely to respond? -> Describes company culture",extent scale
+RecruitEmail_Benefits,proposed,single,"In receiving an email about a job opportunity, what attributes of the message would make you more likely to respond? -> Describes benefits / perks of the work environment",extent scale
+RecruitEmail_CompanyLink,proposed,single,"In receiving an email about a job opportunity, what attributes of the message would make you more likely to respond? -> Link to a Stack Overflow Careers Company Page or other source of more information about the company (videos, articles, etc)",extent scale
+JobBoardVisitFrequency,proposed,single,How often do you visit job boards?,three text answers
+CareersAware,proposed,single,Have you visited / Are you aware of Stack Overflow Careers 2.0?,Yes / No / 'I got my current job via Careers 2.0!'
+CareersProfile,proposed,single,Do you have a Stack Overflow Careers 2.0 Profile?,text as typed
+Ad_Relevant,proposed,single,Please rate the advertising you've seen on Stack Overflow,"agreement scale, as typed"
+Ad_Entertaining,proposed,single,Please rate the advertising you've seen on Stack Overflow -> The ads are entertaining,agreement scale
+Ad_Informative,proposed,single,Please rate the advertising you've seen on Stack Overflow -> The ads are Informative,agreement scale
+Ad_ClickInteresting,proposed,single,Please rate the advertising you've seen on Stack Overflow -> I click on ads that interest me,agreement scale
+Ad_TrialPurchase,proposed,single,Please rate the advertising you've seen on Stack Overflow -> I've taken a trial/purchased a product from ads,agreement scale
+Ad_CanIndicateAds,proposed,single,Please rate the advertising you've seen on Stack Overflow -> I like that I can indicate ads I want to see less of,agreement scale; new in 2014
+Ad_UseAdBlocker,proposed,single,Please rate the advertising you've seen on Stack Overflow -> What ads? I use an ad blocker,agreement scale
+ApptivateAware,proposed,single,Were you aware of the Apptivate contest?,Yes / No / Don't Remember
+ApptivateParticipated,proposed,single,Did you participate in the Apptivate contest?,Yes / No / Don't Remember
+AdvertisersRemembered,proposed,free_text,What advertisers do you remember seeing on Stack Overflow?,"open-ended answer, raw typed text"
+StackOverflowReputation,proposed,single (repaired),What is your current Stack Overflow reputation?,"levels relabelled '0','1+','50+',...,'10000+' (same repair as 2012/2013); 'Don't have an account' -> '0'"
+StackOverflowUsage,proposed,list ';',How do you use Stack Overflow? (cols 113-118),';' list; 'Other' means the typed answer in StackOverflowUsage_OtherText; adds 'Looking for a job' and 'Build my online reputation'
+StackOverflowUsage_OtherText,proposed,free_text,How do you use Stack Overflow? -> Other (please specify),"typed text of the 'Other' usage box, raw"
+StackOverflowSolutionFrequency,proposed,single,How often do you find solutions to your programming problems on Stack Overflow without asking a new question?,how often Stack Overflow solves their problems; five text answers
