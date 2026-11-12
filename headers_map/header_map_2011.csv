@@ -1,0 +1,24 @@
+canonical_name,status,original_header_or_span,note
+ResponseId,proposed,(none in 2011),row number of the respondent in the 2011 file
+survey_year,proposed,(added),constant 2011
+Country,confirmed,What Country or Region do you live in?,"2011 values are regions as well as countries (e.g. 'Other Europe'), not comparable with later country names"
+USState,proposed,Which US State or Territory do you live in?,only asked of US respondents
+Age,confirmed,How old are you?,"text bands, kept as typed"
+YearsCode,confirmed,How many years of IT/Programming experience do you have?,"text bands '<2','2-5','6-10','11+' after Excel repair; question says IT/programming experience - check vs YearsCode/YearsCodePro"
+Industry,proposed,How would you best describe the industry you work in?,
+OrgSize,confirmed,Which best describes the size of your company?,text bands incl. 'Student' and 'Other (not working...)'
+DevType,confirmed,Which of the following best describes your occupation?,single answer in 2011; later years may be ';' lists
+RecommendationActedUpon,proposed,How likely is it that a recommendation you make will be acted upon?,may relate to PurchaseInfluence in later years - check
+PurchaseInvolvement,proposed,What is your involvement in purchasing? You can choose more than 1. (cols 8-14),';' list of options ticked
+PurchaseTypes,proposed,What types of purchases are you involved in? (cols 15-20),';' list
+BudgetOutsideExpenditure,proposed,"What is your budget for outside expenditures (hardware, software, consulting, etc) for 2011? (cols 21-28)",single text bracket after conflict rules; 'Don't know' kept as a value
+ProjectType,proposed,What type of project are you developing?,
+LanguageHaveWorkedWith,confirmed,Which languages are you proficient in? (cols 30-42),';' list of canonical names; tick-boxes + parsed write-ins; 2011 wording is 'proficient in'
+LanguageHaveWorkedWith_count,proposed,(derived),number of distinct languages; 0 if 'None' ticked; blank if block unanswered
+OpSys,confirmed,What operating system do you use the most?,text as typed (Windows 7 / XP / Vista kept separate)
+JobSat,confirmed,Please rate your job/career satisfaction,"five text answers in 2011; later years use a 0-10 score, harmonise later"
+CompTotal,confirmed,"Including bonus, what is your annual compensation in USD?","salary BAND text, kept as typed"
+ConvertedCompYearly,confirmed,"(derived from Including bonus, what is your annual com...)",annual USD band midpoint; includes bonus; top band set by CONFIG
+TechProductsOwned,proposed,Which technology products do you own? (You can choose more than one) (cols 46-62),';' list
+PersonalTechSpend12m,proposed,"In the last 12 months, how much money have you spent on personal technology-related purchases?","text bands, kept as typed"
+SitesFrequentedMost,proposed,Which of our sites do you frequent most?,"text as typed; includes a real answer 'None' - load the CSV with keep_default_na=False, na_values=['']"

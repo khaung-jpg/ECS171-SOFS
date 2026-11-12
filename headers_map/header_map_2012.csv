@@ -1,0 +1,36 @@
+canonical_name,status,original_header_or_span,note
+ResponseId,proposed,(none in 2012),row number of the respondent in the 2012 file
+survey_year,proposed,(added),constant 2012
+Country,confirmed,What Country or Region do you live in?,"2012 values are regions as well as countries (e.g. 'Other Europe'), kept as is"
+USState,proposed,Which US State or Territory do you live in?,only asked of US respondents
+Age,confirmed,How old are you?,"text bands, kept as typed"
+YearsCode,confirmed,How many years of IT/Programming experience do you have?,"text bands '<2','2-5','6-10','11+' after Excel repair; question says IT/programming experience"
+Industry,proposed,How would you best describe the industry you currently work in?,
+OrgSize,confirmed,Which best describes the size of your company?,text bands incl. 'Student' and 'Other (not working...)'
+DevType,confirmed,Which of the following best describes your occupation?,single answer in 2012; later years may be ';' lists
+PurchaseInvolvement,proposed,What is your involvement in purchasing products or services for the company you work for? (You can choose more than one) (cols 7-13),';' list of options ticked
+PurchaseTypes,proposed,What types of purchases are you involved in? (cols 14-19),';' list
+BudgetOutsideExpenditure,proposed,"What is your budget for outside expenditures (hardware, software, consulting, etc) for 2011?",single text bracket; 'Don't know' kept as a value; no conflicting rows in 2012
+ProjectType,proposed,What type of project are you developing?,
+LanguageHaveWorkedWith,confirmed,Which languages are you proficient in? (cols 22-36),';' list of canonical names; tick-boxes + parsed write-ins; 2012 wording is 'proficient in'
+LanguageHaveWorkedWith_count,proposed,(derived),number of distinct languages; 0 if 'None'; blank if block unanswered or unrecognisable
+OpSys,confirmed,Which desktop operating system do you use the most?,text as typed
+JobSat,confirmed,What best describes your career / job satisfaction?,"text answers in 2012; later years use a 0-10 score, harmonise later"
+CompTotal,confirmed,"Including bonus, what is your annual compensation in USD?","salary BAND text, kept as typed"
+ConvertedCompYearly,confirmed,"(derived from Including bonus, what is your annual com...)",annual USD band midpoint; includes bonus; top band set by CONFIG
+CareersAware,proposed,Have you visited / Are you aware of Stack Overflow Careers?,"2012-only question, kept as typed"
+CareersProfile,proposed,Do you have a Stack Overflow Careers Profile?,"2012-only question, kept as typed"
+CareersNoProfileReason,proposed,"You answered you don't have a Careers profile, can you elaborate why?",2012-only; 'Other (please specify)' kept as that text
+CareersNoProfileReasonOther,proposed,(free text next to 42),"2012-only free text, kept as typed"
+TechProductsOwned,proposed,Which technology products do you own? (You can choose more than one) (cols 44-63),';' list; free-text 'Other' becomes the label Other
+AdsRelevant,proposed,Please rate the advertising you've seen on Stack Overflow / The ads are relevant,"agree-disagree scale, text as typed"
+AdsEntertaining,proposed,The ads are entertaining,"agree-disagree scale, text as typed"
+AdsInformative,proposed,The ads are Informative,"agree-disagree scale, text as typed"
+AdsClickInteresting,proposed,I click on ads that interest me,"agree-disagree scale, text as typed"
+AdsTookTrialOrBought,proposed,I've taken a trial/purchased a product from ads,"agree-disagree scale, text as typed"
+AdsUseAdBlocker,proposed,What ads? I use an ad blocker,"agree-disagree scale, text as typed"
+PersonalTechSpend12m,proposed,"In the last 12 months, how much money have you spent on personal technology-related purchases?","text bands, kept as typed"
+AdvertisersRecalled,proposed,What advertisers do you remember seeing on Stack Overflow?,"free text, kept as typed"
+SOReputation,proposed,What is your current Stack Overflow reputation?,text as typed (includes 'Don't have an account')
+SitesFrequentedMost,proposed,Which of our sites do you frequent most?,"text as typed; includes a real answer 'None' - load the CSV with keep_default_na=False, na_values=['']"
+SitesFrequentedMostOther,proposed,(free text next to 73),"free text, kept as typed"
