@@ -1,0 +1,60 @@
+canonical_name,status,kind,original_header_or_span,note
+ResponseId,proposed,id,(none in file),"respondent number in the 2015 file, counted from 1 (the file has no respondent id)"
+survey_year,proposed,constant,(added),constant 2015
+Country,confirmed,single,Country,real country names (157 values)
+Age,confirmed,single,Age,"text bands, kept as typed (includes 'Prefer not to disclose')"
+Gender,proposed,single,Gender,Male / Female / Other / Prefer not to disclose; think about whether it belongs in a salary model
+TabsOrSpaces,proposed,single,Tabs or Spaces,new in 2015
+YearsCode,confirmed,single (repaired),Years IT / Programming Experience,"text repaired to '<2','2-5','6-10','11+' (your mapping; 'Less than 1 year' also -> '<2', an addition to it); question says IT/programming experience"
+DevType,confirmed,single,Occupation,"single answer; 24 values, list differs from 2014"
+OpSys,confirmed,single,Desktop Operating System,text as typed
+OpSys_WriteIn,proposed,free_text,Desktop Operating System: write-in,"typed text, raw"
+LanguageHaveWorkedWith,confirmed,list ';' (cleaned),Current Lang & Tech: Android (cols 8-50),"';' list of canonical names; tick-boxes + parsed write-ins; 2015 asks for languages AND technologies, so tools go to ToolsHaveWorkedWith"
+LanguageHaveWorkedWith_count,proposed,derived number,(derived),number of distinct languages; 0 if 'None' ticked; blank if block unanswered or only an unusable write-in
+ToolsHaveWorkedWith,proposed,list ';' (cleaned),(derived from tick-boxes and write-ins),frameworks/libraries/databases/platforms recognised in the language question; not counted as languages; empty = none recognised
+TechWantToWorkWith,proposed,list ';',Future Lang & Tech: Android (cols 51-93),';' list of options ticked (languages and technologies together); the 2015 analogue of 2013/2014 TechExcitedAbout and of later LanguageWantToWorkWith; NOT language-cleaned; typed 'Other' is in TechWantToWorkWith_WriteIn
+TechWantToWorkWith_WriteIn,proposed,free_text,Future Lang & Tech: Write-In,"typed text, raw"
+TrainingAndEducation,proposed,list ';',Training & Education: No formal training (cols 94-104),"select all that apply; the label ""No formal training; I'm self-taught"" had its ';' changed to ',' so the ';' list stays unambiguous"
+CompTotal,confirmed,single (band text),Compensation,"salary BAND text, kept as typed except your repairs ('Less than $20,000' -> '<$20,000', 'More than $160,000' -> '>$160,000'); 'Unemployed' -> '0' then dropped"
+ConvertedCompYearly,confirmed,derived number,(derived from the salary band),annual USD band midpoint; includes bonus; top band set by CONFIG
+EmploymentStatus,proposed,single,Employment Status,"new in 2015 (includes 'I'm a student', 'Retired')"
+Industry,proposed,single,Industry,"20 values, list differs from 2014"
+JobSat,confirmed,single,Job Satisfaction,"six text answers; 2015 wording, incl. 'Other (please specify)'; later years use a 0-10 score, harmonise later"
+PurchasingPower,proposed,single,Purchasing Power,a single answer in 2015 (a ';' list called PurchaseInvolvement in 2011-2014)
+RemoteWork,proposed,single,Remote Status,levels differ from 2014 ('I rarely work remote' replaces 'Occasionally')
+ChangedJobsLast12m,proposed,single,Changed Jobs in last 12 Months,Yes / No / 'No (I'm a student)'
+OpenToNewJob,proposed,single,Open to new job opportunities,three text answers
+JobAspectsMostImportant,proposed,list ';',Most important aspect of new job opportunity: Salary (cols 114-131),select up to 3
+RemoteImportance,proposed,single,How important is remote when evaluating new job opportunity?,five text answers
+JobSearchAnnoyances,proposed,list ';',Most annoying about job search: Finding time (cols 133-139),select up to 3
+RecruiterContactFrequency,proposed,single,How often contacted by recruiters,five text answers
+RecruiterContactPerception,proposed,single (repaired),Perception of recruiter contact,text artifacts ('Œæ' for a space) repaired
+ContactPref_Email,proposed,single,Perception of contact form: Email,Great / Tolerate / Hate / I don't have an account; the 2014 ContactPref_* columns used a different scale
+ContactPref_LinkedIn,proposed,single,Perception of contact form: LinkedIn,same scale
+ContactPref_Xing,proposed,single,Perception of contact form: Xing,same scale; new in 2015
+ContactPref_Phone,proposed,single,Perception of contact form: Phone,same scale
+ContactPref_CareersMessage,proposed,single,Perception of contact form: Stack Overflow Careers,same scale
+ContactPref_Twitter,proposed,single,Perception of contact form: Twitter,same scale
+ContactPref_Facebook,proposed,single,Perception of contact form: Facebook,same scale; new in 2015
+RecruitEmailAppealingTraits,proposed,list ';',Appealing message traits: Message is personalized (cols 149-156),"select all that apply (2014 asked these as extent ratings, RecruitEmail_*)"
+JobInfoMostUrgent,proposed,list ';',Most urgent info about job opportunity: Salary (cols 157-164),select up to 3
+CommunicateWith_Headhunter,proposed,single,Who do you want to communicate with about a new job opportunity: Headhunter,Great / Tolerate / Hate
+CommunicateWith_InHouseRecruiter,proposed,single,Who do you want to communicate with about a new job opportunity: In-house recruiter,Great / Tolerate / Hate
+CommunicateWith_InHouseTechRecruiter,proposed,single,Who do you want to communicate with about a new job opportunity: In-house tech recruiter,Great / Tolerate / Hate
+CommunicateWith_Manager,proposed,single,Who do you want to communicate with about a new job opportunity: Manager,Great / Tolerate / Hate
+CommunicateWith_Developer,proposed,single,Who do you want to communicate with about a new job opportunity: Developer,Great / Tolerate / Hate
+InterviewImprovements,proposed,list ';',How can companies improve interview process: More live code (cols 170-178),select up to 3; text artifacts repaired
+WhyTryCareers,proposed,list ';',Why try Stack Overflow Careers: No spam (cols 179-184),select all that apply; text artifacts repaired
+CaffeinatedBeveragesPerDay,proposed,single,How many caffeinated beverages per day?,"text '0'..'9' and 'More than 10', kept as typed"
+HobbyProgrammingHours,proposed,single,How many hours programming as hobby per week?,"text bands, kept as typed; includes a real answer 'None'"
+StackOverflowVisitFrequency,proposed,single (repaired),How frequently land on or read Stack Overflow,text artifacts repaired ('Multipleætimes a day')
+PreferredEditor,proposed,single,Preferred text editor,text as typed; 'write-in' answers are in PreferredEditor_WriteIn
+PreferredEditor_WriteIn,proposed,free_text,Preferred text editor: write-in,"typed text, raw"
+IDETheme,proposed,single,Prefered IDE theme,Dark / Light / I don't use an IDE
+SourceControlUsed,proposed,list ';',Source control used: Git (cols 191-201),select all that apply; 'Other' means the typed answer in SourceControlUsed_WriteIn
+SourceControlUsed_WriteIn,proposed,free_text,Source control used: write-in,"typed text, raw"
+PreferredSourceControl,proposed,single,Prefered Source Control,text as typed
+PreferredSourceControl_WriteIn,proposed,free_text,Prefered Source Control: write-in,"typed text, raw"
+WhyUseStackOverflow,proposed,list ';',Why use Stack Overflow: Help for job (cols 204-212),select all that apply; text artifacts repaired
+StackOverflowAnswersHelpful,proposed,single,How often are Stack Overflow's answers helpful,five text answers
+WhyAnswer,proposed,list ';',Why answer: Help a programmer in need (cols 214-221),select all that apply
